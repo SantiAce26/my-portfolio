@@ -4,6 +4,23 @@
   width: 650px;
 }
 
+.image-thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+
+.image-thumbnails img {
+  margin: 10px;
+  max-height: 300px;
+  max-width: 500px;
+}
+
 #greeting-container {
   margin-top: 20px;
+}
+
+#fact-container{
+    margin-top: 10px;
 }
