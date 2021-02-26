@@ -27,8 +27,7 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
-function addRandomFact()
-{
+function addRandomFact(){
 
     //List of facts
     const facts =
@@ -36,9 +35,9 @@ function addRandomFact()
     "I am double jointed in my fingers", "I'm highly interested in machine learning/deep learning", "Hey you landed on the special fact that you're cool"];
 
     //Picks a random fact
-    const fact = facts[Math.floor(Math.random() *facts.length)];
+    const fact = facts[Math.floor(Math.random() * facts.length)];
 
     // Add it to the page
-    const factContainter = document.getElementById('fact-container');
-    factContainter.innerText = fact;
+    const factContainer = document.getElementById('fact-container');
+    factContainer.innerText = fact;
 }
