@@ -7,6 +7,34 @@
     <script src="script.js"></script>
   </head>
   <body>
+    <!-- bubble introducing a scene -->
+    <div class="bubble">
+        Alright people!<br /><strong>This! This is my Portfolio!</strong>
+    </div>
+
+    <!-- bubble highlighting something  -->
+    <div class="bubble bubble--highlight">
+        Who am I?
+    </div>
+
+    <!-- tag with the name of the main character -->
+    <div class="tag">
+        <strong>Hello</strong>
+        <br />
+        my name is
+    </div>
+
+
+        
+        
+    <div>
+        <img src = "/images/fire.gif"/>
+        <a href = "https://www.linkedin.com/in/santiago-acevedo-ididthis123/" target="_blank" rel="noopener noreferrer"><button class = "bubble bubble--button">LinkedIn</button></a>
+        <a href = "https://github.com/SantiAce26" target="_blank" rel="noopener noreferrer"><button class = "bubble bubble--button">Github</button></a>
+        <a href = "projects.html" ><button class = "bubble bubble--button">My Projects</button></a>
+        <a href = "aboutMe.html" ><button class = "bubble bubble--button">About Me</button></a>
+        <img src = "/images/fire.gif"/>
+    </div>
     <div id="content">
       <h1>My Awesometacular Portfolio that Blows the Roof Off!</h1>
       <p>This is my portfolio....hhahaha no blown roofs yet...</p>
@@ -20,13 +48,15 @@
           <li>My <a href = "https://www.linkedin.com/in/santiago-acevedo-ididthis123/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>  
           <li>My <a href = "https://github.com/SantiAce26" target="_blank" rel="noopener noreferrer">Git Hub</a></li>        
           <li><a href = "Projects.html">Projects</a></li>
-          <li>For Random Facts about me (That are interesting) click <button onclick = "addRandomFact()">here</button></li>
+          <li>For Random Facts about me (That are interesting) click <button class = "bubble bubble--button" onclick = "addRandomFact()">here</button> <button class = "bubble--button">Test</button></li>
           <div id = "fact-container"></div>
       </ul>
       <p>Click <a href="/hello">here</a> to see content created by server code.</p>
       <p>Click here to get a random message:</p>
       <button onclick="addRandomGreeting()">Hello</button>
       <div id="greeting-container"></div>
+        
     </div>
+       
   </body>
 </html>
