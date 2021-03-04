@@ -8,6 +8,17 @@
   </head>
 
     <body>
-        <p>Something something something</p>
+        <div class="bubble">
+            <strong>About Me</strong>
+        </div>
+
+        <div class="bubble bubble--highlight">
+            First Lets start with a random fact!
+            <br />
+            Click on the button below to get a random fact about me!
+        </div>
+        <button class="bubble bubble--button" onclick="showFact();">Facts</button>
+        <div class="bubble" id='fact-container' ></div>
+        <p class="bubble--highlight"> To see the server response directly Click <a href="/fact">Here</a></p>
     </body>
 </html>

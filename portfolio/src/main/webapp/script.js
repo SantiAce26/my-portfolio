@@ -27,7 +27,7 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
-function addRandomFact(){
+/*function addRandomFact(){
 
     //List of facts
     const facts =
@@ -40,4 +40,14 @@ function addRandomFact(){
     // Add it to the page
     const factContainer = document.getElementById('fact-container');
     factContainer.innerText = fact;
+}*/
+
+async function showFact() {
+  const responseFromServer = await fetch('/fact');
+  const textFromResponse = await responseFromServer.text();
+
+  const factContainer = document.getElementById('fact-container');
+  factContainer.innerText = textFromResponse;
 }
+
+
