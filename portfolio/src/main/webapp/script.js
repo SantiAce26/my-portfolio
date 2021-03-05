@@ -50,4 +50,17 @@ async function showFact() {
   factContainer.innerText = textFromResponse;
 }
 
+async function getMovieQuote(){
+  const responseFromServer = await fetch('/MovieQuotes');
+  const textFromResponse = await responseFromServer.json();
+  console.log(textFromResponse);
+  const quote = textFromResponse[Math.floor(Math.random() * textFromResponse.length)];
+  console.log(quote);
+
+  //Adding it to the page
+  const quoteContainer = document.getElementById('quote-container');
+  quoteContainer.innerText = quote;
+
+}
+
 
