@@ -27,7 +27,7 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
-function addRandomFact(){
+/*function addRandomFact(){
 
     //List of facts
     const facts =
@@ -40,4 +40,27 @@ function addRandomFact(){
     // Add it to the page
     const factContainer = document.getElementById('fact-container');
     factContainer.innerText = fact;
+}*/
+
+async function showFact() {
+  const responseFromServer = await fetch('/fact');
+  const textFromResponse = await responseFromServer.text();
+
+  const factContainer = document.getElementById('fact-container');
+  factContainer.innerText = textFromResponse;
 }
+
+async function getMovieQuote(){
+  const responseFromServer = await fetch('/MovieQuotes');
+  const textFromResponse = await responseFromServer.json();
+  console.log(textFromResponse);
+  const quote = textFromResponse[Math.floor(Math.random() * textFromResponse.length)];
+  console.log(quote);
+
+  //Adding it to the page
+  const quoteContainer = document.getElementById('quote-container');
+  quoteContainer.innerText = quote;
+
+}
+
+

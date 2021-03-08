@@ -1,3 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Dekko&family=Lato:wght@900&family=Rock+Salt&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  min-height: 100vh;
+  width: 100%;
+  background: #eee;
+  /* center the content in the page (mainly horizontally) */
+  display: grid;
+  place-items: center;
+  /* include the same texture used for the .bubble containers, but with notably less opacity */
+  background: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(0)" opacity="0.2" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g  fill="%23250E17"><circle cx="25" cy="25" r="12.5"/><circle cx="75" cy="75" r="12.5"/><circle cx="75" cy="25" r="12.5"/><circle cx="25" cy="75" r="12.5"/></g></svg>'),
+    #09eafa;
+  background-size: 10px, 100%;
+}
+
 #content {
   margin-left: auto;
   margin-right: auto;
@@ -22,30 +43,18 @@
 }
 
 #fact-container{
-    margin-top: 10px;
+     background: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(25)" opacity="0.3" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g  fill="%23250E17"><circle cx="25" cy="25" r="12.5"/><circle cx="75" cy="75" r="12.5"/><circle cx="75" cy="25" r="12.5"/><circle cx="25" cy="75" r="12.5"/></g></svg>'),
+     #c767ff;
+    background-size: 10px, 100%;
+    font-weight: 700;
 }
 
-@import url("https://fonts.googleapis.com/css?family=Dekko|Lato:900|Rock+Salt");
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+#quote-container{
+    background: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(25)" opacity="0.3" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g  fill="%23250E17"><circle cx="25" cy="25" r="12.5"/><circle cx="75" cy="75" r="12.5"/><circle cx="75" cy="25" r="12.5"/><circle cx="25" cy="75" r="12.5"/></g></svg>'),
+     #fa9e14;
+     background-size: 10px, 100%;
+    font-weight: 700;
 }
-
-body{
-  min-height: 100vh;
-  width: 100%;
-  background: #eee;
-  /* center the content in the page (mainly horizontally) */
-  display: grid;
-  place-items: center;
-  /* include the same texture used for the .bubble containers, but with notably less opacity */
-  background: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(0)" opacity="0.2" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g  fill="%23250E17"><circle cx="25" cy="25" r="12.5"/><circle cx="75" cy="75" r="12.5"/><circle cx="75" cy="25" r="12.5"/><circle cx="25" cy="75" r="12.5"/></g></svg>'),
-    #09eafa;
-  background-size: 10px, 100%;
-}
-
 
 /* .bubble containers: add the texture above a solid background */
 .bubble{
@@ -55,7 +64,7 @@ body{
   margin: 2rem 0;
   padding: 0.2rem 1.25rem;
   text-align: center;
-  font-family: "Dekko", cursive;
+  font-family: 'Dekko', cursive;
   text-transform: uppercase;
   font-size: 2rem;
   letter-spacing: 0.2rem;
@@ -73,6 +82,10 @@ body{
     #ffcd28;
   background-size: 10px, 100%;
   font-weight: 700;
+}
+
+.bubble--highlight p{
+    font-size: 50%;
 }
 
 .bubble--highlight img{
@@ -123,7 +136,7 @@ body{
   color: #fff;
   background: #f8012d;
   text-align: center;
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   box-shadow: 0 1px 15px -7.5px #000000;
   /* position relative for the pseudo element(s) */
   position: relative;
@@ -155,7 +168,7 @@ body{
   left: 0;
   width: 100%;
   text-align: center;
-  font-family: "Rock Salt", cursive;
+  font-family: 'Rock Salt', cursive;
   font-size: 2rem;
   letter-spacing: 0.25rem;
   font-weight: 300;

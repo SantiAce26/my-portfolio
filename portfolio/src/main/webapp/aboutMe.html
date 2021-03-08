@@ -8,6 +8,24 @@
   </head>
 
     <body>
-        <p>Something something something</p>
+        <div class="bubble">
+            <strong>About Me</strong>
+        </div>
+
+        <div class="bubble bubble--highlight">
+            First Lets start with a random fact!
+            <br />
+            Click on the button below to get a random fact about me!
+        </div>
+        <button class="bubble bubble--button" onclick="showFact();">Facts</button>
+        <div class="bubble" id='fact-container' ></div>
+        <div class="bubble bubble--highlight">
+            Or what about one of my favorite movie quotes!
+            <br />
+            Click on the button below to get a random favorite movie quote about me!
+        </div>
+        <button class="bubble bubble--button" onclick="getMovieQuote();">Movie Quotes</button>
+        <div class="bubble" id='quote-container' ></div>
+        <p class="bubble--highlight"> To see the server response for the facts directly Click <a href="/fact">Here</a> and for the movie quotes Click <a href="/MovieQuotes">Here</a></p>
     </body>
 </html>
