@@ -18,7 +18,7 @@ public class FormHandlerServlet extends HttpServlet {
     // Print the value so you can see it in the server logs.
     System.out.println("Joke submitted: " + textValue);
 
-    // Write the value to the response so the user can see it.
+    // redirects user back to index.html
     response.sendRedirect("index.html");
   }
 }

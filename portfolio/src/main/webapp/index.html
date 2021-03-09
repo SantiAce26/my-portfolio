@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/charts/loader.js"></script>    
     <script src="script.js"></script>
   </head>
   <body>
@@ -34,6 +35,23 @@
         <a href = "projects.html" ><button class = "bubble bubble--button">My Projects</button></a>
         <a href = "aboutMe.html" ><button class = "bubble bubble--button">About Me</button></a>
         <img src = "/images/fire.gif"/>
+    </div>
+
+    <div class="bubble">
+        <h1>Where are you from?</h1>
+        <div id="regions-div" style="width: 500px; height: 500px;"></div>
+        <h2>Choose what continent you're from!</h2>
+        <form action="/geography-data" method="POST">
+            <select name="Continent">
+                <option value="North America">North America</option>
+                <option value="South America">South America</option>
+                <option value="Africa">Africa</option>
+                <option value="Europe">Europe</option>
+                <option value="Asia">Asia</option>
+                <option value="Australia">Australia</option>
+            </select>
+            <button>Submit</button>
+        </form>
     </div>
     <form action="/form-handler" method="POST">
         <p>Enter Your Favorite Joke here:</p>
