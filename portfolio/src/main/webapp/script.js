@@ -59,14 +59,17 @@ async function getMovieQuote(){
 }
 
 function drawRegionsMap() {
-    fetch('/geography-data').then(response => response.json()).then((geoGraphyCount) => {
+    fetch('/geography-data').then(response => response.json()).then((geographyCount) => {
         const data = new google.visualization.DataTable();
-        data.addColumn('String','Continent');
-        data.addColumn('Number','People');
-        Object.keys(geoGraphyCount).forEach((Continent) => {
-            data.addRow([Continent, geoGraphyCount[Continent]]);
+        data.addColumn('string','Country');
+        data.addColumn('number','People');
+        Object.keys(geographyCount).forEach((Country) => {
+            data.addRow([Country, geographyCount[Country]]);
         });
-        const options = {};
+        const options = {colorAxis: {colors: ['#00fcc6', '#05ed71', '#007527']},
+                        backgroundColor: '#81d4fa',
+                        datalessRegionColor: '#8df2bc',
+                        defaultColor: '#f5f5f5',};
 
         const chart = new google.visualization.GeoChart(document.getElementById('regions-div'));
 
@@ -74,5 +77,23 @@ function drawRegionsMap() {
     });
 
 }
+
+/*function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Popularity'],
+          ['Germany', 200],
+          ['United States', 300],
+          ['Brazil', 400],
+          ['Canada', 500],
+          ['France', 600],
+          ['RU', 700]
+        ]);
+
+        var options = {};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions-div'));
+
+        chart.draw(data, options);
+}*/
 
 
