@@ -39,9 +39,9 @@ public class GeographyServlets extends HttpServlet {
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    String continent = request.getParameter("Continent");
-    int currentCount = geographyCount.containsKey(continent) ? geographyCount.get(continent) : 0;
-    geographyCount.put(continent, currentCount + 1);
+    String country = request.getParameter("Country");
+    int currentCount = geographyCount.containsKey(country) ? geographyCount.get(country) : 0;
+    geographyCount.put(country, currentCount + 1);
 
     response.sendRedirect("index.html");
   }
