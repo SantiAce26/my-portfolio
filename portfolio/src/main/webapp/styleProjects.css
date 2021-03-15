@@ -15,7 +15,7 @@ body{
   place-items: center;
   /* include the same texture used for the .bubble containers, but with notably less opacity */
   background: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(0)" opacity="0.2" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g  fill="%23250E17"><circle cx="25" cy="25" r="12.5"/><circle cx="75" cy="75" r="12.5"/><circle cx="75" cy="25" r="12.5"/><circle cx="25" cy="75" r="12.5"/></g></svg>'),
-    #09eafa;
+    #f86b1a;
   background-size: 10px, 100%;
 }
 
@@ -106,53 +106,4 @@ body{
     background-size: 10px, 100%;
     font-weight: 700;
         
-}
-
-/* for the tag, add a lot of whitespace below the string, to include the name */
-.tag {
-  margin-bottom: 2rem;
-  padding: 1rem 7.5rem 11rem;
-  border-radius: 30px;
-  font-size: 2rem;
-  color: #fff;
-  background: #f8012d;
-  text-align: center;
-  font-family: 'Lato', sans-serif;
-  box-shadow: 0 1px 15px -7.5px #000000;
-  /* position relative for the pseudo element(s) */
-  position: relative;
-}
-
-.tag strong {
-  text-transform: uppercase;
-  font-size: 3.5rem;
-}
-
-/* with the :before include a solid white background */
-.tag:before {
-  content: "";
-  position: absolute;
-  top: 9rem;
-  left: 2%;
-  width: 96%;
-  height: 9rem;
-  background: #fff;
-  /* border-radius mathing the .tag container */
-  border-radius: 0 0 30px 30px;
-}
-
-/* with the :after add the name of the character */
-.tag:after {
-  content: "Santiago Acevedo";
-  position: absolute;
-  top: 11.25rem;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  font-family: 'Rock Salt', cursive;
-  font-size: 2rem;
-  letter-spacing: 0.25rem;
-  font-weight: 300;
-  font-weight: bold;
-  color: #000;
 }

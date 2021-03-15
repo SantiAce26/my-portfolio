@@ -15,6 +15,16 @@
 /**
  * Adds a random greeting to the page.
  */
+
+google.charts.load('current', {
+        'packages':['geochart'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyBUzvpzRjE2mMu1G9MIy81hK5oUhC5vLww'
+      });
+google.charts.setOnLoadCallback(drawRegionsMap);
+
+
 function addRandomGreeting() {
   const greetings =
       ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
@@ -26,21 +36,6 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
-
-/*function addRandomFact(){
-
-    //List of facts
-    const facts =
-    ["I am Colombian B)", "I know Python,Java,C(Not an expert though)", "Demon Slayer is my favorite anime", "I love food...", "I like coding hehehe" ,
-    "I am double jointed in my fingers", "I'm highly interested in machine learning/deep learning", "Hey you landed on the special fact that you're cool"];
-
-    //Picks a random fact
-    const fact = facts[Math.floor(Math.random() * facts.length)];
-
-    // Add it to the page
-    const factContainer = document.getElementById('fact-container');
-    factContainer.innerText = fact;
-}*/
 
 async function showFact() {
   const responseFromServer = await fetch('/fact');
@@ -62,5 +57,43 @@ async function getMovieQuote(){
   quoteContainer.innerText = quote;
 
 }
+
+function drawRegionsMap() {
+    fetch('/geography-data').then(response => response.json()).then((geographyCount) => {
+        const data = new google.visualization.DataTable();
+        data.addColumn('string','Country');
+        data.addColumn('number','People');
+        Object.keys(geographyCount).forEach((Country) => {
+            data.addRow([Country, geographyCount[Country]]);
+        });
+        const options = {colorAxis: {colors: ['#00fcc6', '#05ed71', '#007527']},
+                        backgroundColor: '#81d4fa',
+                        datalessRegionColor: '#8df2bc',
+                        defaultColor: '#f5f5f5',};
+
+        const chart = new google.visualization.GeoChart(document.getElementById('regions-div'));
+
+        chart.draw(data, options);
+    });
+
+}
+
+/*function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Popularity'],
+          ['Germany', 200],
+          ['United States', 300],
+          ['Brazil', 400],
+          ['Canada', 500],
+          ['France', 600],
+          ['RU', 700]
+        ]);
+
+        var options = {};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions-div'));
+
+        chart.draw(data, options);
+}*/
 
 
